@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1098058561248",
+    "project_id": "bloodds-4cc4a",
+    "storage_bucket": "bloodds-4cc4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098058561248:android:0666a10d890a00bbba8285",
+        "android_client_info": {
+          "package_name": "com.example.bds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1098058561248-qq1v3q9n6qc4k3slvsb2tod9j6l8sl52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCInTlLn7u0a6zYeGxDlmmiUEqm7vRqKQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1098058561248-qq1v3q9n6qc4k3slvsb2tod9j6l8sl52.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
