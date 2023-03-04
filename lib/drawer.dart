@@ -31,9 +31,7 @@ Drawer sideDrawer() {
                       return Column(children: [
                         DrawerHeader(
                           padding: const EdgeInsets.all(0),
-                          
                           child: UserAccountsDrawerHeader(
-                            
                             accountName: Text(
                               (name ?? user.displayName ?? "").toUpperCase(),
                               style: const TextStyle(fontSize: 24),
@@ -43,7 +41,6 @@ Drawer sideDrawer() {
                               style: const TextStyle(
                                 fontSize: 18,
                               ),
-                              
                             ),
                             currentAccountPictureSize: const Size.square(50),
                             currentAccountPicture: CircleAvatar(
@@ -63,27 +60,36 @@ Drawer sideDrawer() {
                         ),
                       ]);
                     }),
-                   
                     const Divider(),
                     ListTile(
                       title: const Text('Update Profile'),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, '/profile');
+                      },
                     ),
                     ListTile(
                       title: const Text('Donors'),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, '/donors');
+                      },
                     ),
                     ListTile(
                       title: const Text('Request'),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, '/request');
+                      },
                     ),
                     ListTile(
                       title: const Text('Donate'),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, '/donate');
+                      },
                     ),
                     ListTile(
                       title: const Text('LogOut'),
-                      onTap: () {},
+                      onTap: () {
+                        // Add logout functionality here
+                      },
                     ),
                   ],
                 );

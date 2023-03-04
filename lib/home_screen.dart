@@ -25,24 +25,32 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Donors()),
-                );
-              },
-              child: const Text('Donors'),
+            SizedBox(
+              height: 200,
+              width: 200,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Donors()),
+                  );
+                },
+                child: const Text('Donors'),
+              ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Request()),
-                );
-              },
-              child: const Text('Request'),
+            SizedBox(
+              height: 200,
+              width: 200,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Request()),
+                  );
+                },
+                child: const Text('Request'),
+              ),
             ),
           ],
         ),

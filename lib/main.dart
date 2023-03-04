@@ -1,3 +1,8 @@
+import 'package:bds/donors.dart';
+import 'package:bds/home_screen.dart';
+import 'package:bds/profile.dart';
+import 'package:bds/request.dart';
+import 'package:bds/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'login_screen.dart';
@@ -23,7 +28,16 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const LoginScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(),
+        '/profile': (context) => const ProfilePage(),
+        '/donors': (context) => const Donors(),
+        '/request': (context) => const Request(), 
+      },
     );
   }
+}
+
+class HomeScreen {
 }
