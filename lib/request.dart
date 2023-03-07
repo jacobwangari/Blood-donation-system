@@ -14,7 +14,7 @@ class _RequestState extends State<Request> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        drawer: sideDrawer(),
+        
         appBar: AppBar(
           title:const Text("Request Blood")
         ),

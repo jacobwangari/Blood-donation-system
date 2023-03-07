@@ -3,6 +3,7 @@ import 'package:bds/home_screen.dart';
 import 'package:bds/profile.dart';
 import 'package:bds/request.dart';
 import 'package:bds/signup_screen.dart';
+import 'package:bds/wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'login_screen.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomePage(),
+        '/': (context) => const HomeWrapper(),
         '/profile': (context) => const ProfilePage(),
         '/login':(context) => const LoginScreen(),
         '/donors': (context) => const Donors(),
