@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Donors extends StatefulWidget {
   const Donors({Key? key}) : super(key: key);
@@ -37,30 +36,39 @@ class _DonorsState extends State<Donors> {
 
           final users = snapshot.data!.docs;
           return ListView.builder(
-  itemCount: users.length,
-  itemBuilder: (BuildContext context, int index) {
-    final user = users[index].data() as Map<String, dynamic>;
-    return ListTile(
-      leading: const Icon(Icons.person),
-      title: Text(user['name']),
-      subtitle: Row(
-        children: [
-          const Icon(Icons.location_on),
-          Text(user['location']),
-          const SizedBox(width: 10),
-          const Icon(Icons.local_phone),
-          InkWell(
-            onTap: () => launch('tel:${user['phone']}'),
-            child: Text(user['phone']),
-          ),
-          const SizedBox(width: 10),
-          const Icon(Icons.local_hospital),
-          Text(user['blood_group']),
-        ],
-      ),
-    );
-  },
-);
+            itemCount: users.length,
+            itemBuilder: (BuildContext context, int index) {
+              final user = users[index].data() as Map<String, dynamic>;
+              return Container(
+                margin: const EdgeInsets.only(top: 20, ),
+                decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(15)),
+                child: ListTile(
+                  leading: const Icon(Icons.person),
+                  title: Text(user['name']),
+                  subtitle: Row(
+                    children: [
+                      const Icon(Icons.location_on),
+                      Text(user['location']),
+
+                      const SizedBox(width: 10),
+                      const Icon(Icons.phone),
+                      Text(user['phone']),
+
+                      const SizedBox(width: 10),
+                      const Icon(Icons.local_hospital),
+                      Text(user['blood_group']),
+
+                      const SizedBox(width: 10),
+                      const Icon(Icons.email),
+                      Text(user['email']), // Add this line to show the email
+                    ],
+                  ),
+                ),
+              );
+            },
+          );
         },
       ),
     );

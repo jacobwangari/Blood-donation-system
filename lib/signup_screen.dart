@@ -100,6 +100,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             .doc(userCredential.user!.uid)
             .set({
           'name': _nameController.text,
+          'email': _emailController.text,
           'phone': _phoneController.text,
           'blood_group': _selectedBloodGroup,
           'location': _selectedLocation,
