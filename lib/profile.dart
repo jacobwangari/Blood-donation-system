@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-
-
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
@@ -15,8 +13,9 @@ class _ProfilePageState extends State<ProfilePage> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   final _phoneController = TextEditingController();
-  String _selectedBloodGroup = '';
-  String _selectedLocation = '';
+  final _emailController = TextEditingController();
+  String _selectedBloodGroup = 'A+';
+  String _selectedLocation = 'Nairobi';
 
   @override
   Widget build(BuildContext context) {
@@ -92,16 +91,52 @@ class _ProfilePageState extends State<ProfilePage> {
                         });
                       },
                       items: [
-                        'Nairobi',
-                        'Mombasa',
-                        'Kisumu',
-                        'Nakuru',
-                        'Eldoret',
-                        'Thika',
-                        'Machakos',
+                        'Bomet',
+                        'Bungoma',
+                        'Busia',
+                        'Elgeyo/Marakwet',
+                        'Embu',
+                        'Garissa',
+                        'Homa Bay',
+                        'Isiolo',
+                        'Kajiado',
                         'Kakamega',
                         'Kericho',
-                        'Kilifi'
+                        'Kiambu',
+                        'Kilifi',
+                        'Kirinyaga',
+                        'Kisii',
+                        'Kisumu',
+                        'Kitui',
+                        'Kwale',
+                        'Laikipia',
+                        'Lamu',
+                        'Machakos',
+                        'Makueni',
+                        'Mandera',
+                        'Marsabit',
+                        'Meru',
+                        'Migori',
+                        'Mombasa',
+                        'Murang\'a',
+                        'Nairobi',
+                        'Nakuru',
+                        'Nandi',
+                        'Narok',
+                        'Nyamira',
+                        'Nyandarua',
+                        'Nyeri',
+                        'Samburu',
+                        'Siaya',
+                        'Taita/Taveta',
+                        'Tana River',
+                        'Tharaka-Nithi',
+                        'Trans Nzoia',
+                        'Turkana',
+                        'Uasin Gishu',
+                        'Vihiga',
+                        'Wajir',
+                        'West Pokot'
                       ]
                           .map((value) => DropdownMenuItem(
                                 value: value,
@@ -111,6 +146,16 @@ class _ProfilePageState extends State<ProfilePage> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please select your location';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      controller: _emailController,
+                      decoration: const InputDecoration(labelText: 'Email'),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Please enter your email';
                         }
                         return null;
                       },
@@ -125,30 +170,31 @@ class _ProfilePageState extends State<ProfilePage> {
                               .set({
                             'name': _nameController.text,
                             'phone': _phoneController.text,
+                            'email': _emailController.text,
                             'blood_group': _selectedBloodGroup,
                             'location': _selectedLocation,
-}).then((value) {
-ScaffoldMessenger.of(context).showSnackBar(
-const SnackBar(
-content:
-Text('Profile updated successfully')));
-}).catchError((error) {
-ScaffoldMessenger.of(context).showSnackBar(
-SnackBar(content: Text(error.toString())));
-});
-}
-},
-child: const Text('Update Profile'),
-),
-],
-),
-),
-);
-} else {
-return const Center(child: CircularProgressIndicator());
-}
-},
-),
-);
-}
+                          }).then((value) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content:
+                                        Text('Profile updated successfully')));
+                          }).catchError((error) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text(error.toString())));
+                          });
+                        }
+                      },
+                      child: const Text('Update Profile'),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          } else {
+            return const Center(child: CircularProgressIndicator());
+          }
+        },
+      ),
+    );
+  }
 }

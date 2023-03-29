@@ -39,31 +39,87 @@ class _DonorsState extends State<Donors> {
             itemCount: users.length,
             itemBuilder: (BuildContext context, int index) {
               final user = users[index].data() as Map<String, dynamic>;
-              return Container(
-                margin: const EdgeInsets.only(top: 20, ),
-                decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(15)),
-                child: ListTile(
-                  leading: const Icon(Icons.person),
-                  title: Text(user['name']),
-                  subtitle: Row(
-                    children: [
-                      const Icon(Icons.location_on),
-                      Text(user['location']),
-
-                      const SizedBox(width: 10),
-                      const Icon(Icons.phone),
-                      Text(user['phone']),
-
-                      const SizedBox(width: 10),
-                      const Icon(Icons.local_hospital),
-                      Text(user['blood_group']),
-
-                      const SizedBox(width: 10),
-                      const Icon(Icons.email),
-                      Text(user['email']), // Add this line to show the email
+              return GestureDetector(
+                onTap: () {
+                  // Add your action here, such as opening a detailed view of the user
+                },
+                child: Container(
+                  margin: const EdgeInsets.only(top: 20),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 7,
+                        offset: const Offset(0, 3),
+                      ),
                     ],
+                  ),
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.person,
+                      color: Colors.blue,
+                    ),
+                    title: Text(
+                      user['name'],
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Row(
+                      children: [
+                        const Icon(
+                          Icons.location_on,
+                          color: Colors.red,
+                        ),
+                        Text(
+                          user['location'],
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        const Icon(
+                          Icons.phone,
+                          color: Colors.green,
+                        ),
+                        Text(
+                          user['phone'],
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        const Icon(
+                          Icons.local_hospital,
+                          color: Colors.orange,
+                        ),
+                        Text(
+                          user['blood_group'],
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        const Icon(
+                          Icons.email,
+                          color: Colors.purple,
+                        ),
+                        Text(
+                          user['email'],
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               );
