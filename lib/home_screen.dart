@@ -1,4 +1,5 @@
 import 'package:bds/drawer.dart';
+import 'package:bds/report.dart';
 import 'package:flutter/material.dart';
 import 'donors.dart';
 import 'request.dart';
@@ -18,41 +19,42 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Safe Live'),
       ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 200,
-              width: 200,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Donors()),
-                  );
-                },
-                child: const Text('Donors'),
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 200,
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Donors()),
+                    );
+                  },
+                  child: const Text('Donors'),
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            SizedBox(
-              height: 200,
-              width: 200,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Request()),
-                  );
-                },
-                child: const Text('Request'),
+              const SizedBox(height: 20),
+              SizedBox(
+                height: 200,
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Request()),
+                    );
+                  },
+                  child: const Text('Request'),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

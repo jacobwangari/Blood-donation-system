@@ -39,7 +39,7 @@ dependencies:
   cloud_firestore: ^4.4.0
   firebase_auth: ^4.2.6
   url_launcher: ^6.1.9
-  mailer: ^6.0.0
+  flutter_email_sender: 
 
 dev_dependencies:
   flutter_test:

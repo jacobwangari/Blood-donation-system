@@ -69,71 +69,54 @@ class _DonorsState extends State<Donors> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    subtitle: Wrap(
-                      spacing: 10,
+                    subtitle: Row(
                       children: [
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.location_on,
-                              color: Colors.red,
-                            ),
-                            Text(
-                              user['location'],
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
+                        const Icon(
+                          Icons.location_on,
+                          color: Colors.red,
                         ),
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.phone,
-                              color: Colors.green,
-                            ),
-                            Text(
-                              user['phone'],
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
+                        Text(
+                          user['location'],
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.local_hospital,
-                              color: Colors.orange,
-                            ),
-                            Text(
-                              user['blood_group'],
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
+                        const SizedBox(width: 10),
+                        const Icon(
+                          Icons.phone,
+                          color: Colors.green,
                         ),
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.email,
-                              color: Colors.purple,
-                            ),
-                            Text(
-                              user['email'],
-                              style: const TextStyle(
-
-
-
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
+                        Text(
+                          user['phone'],
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        const Icon(
+                          Icons.local_hospital,
+                          color: Colors.orange,
+                        ),
+                        Text(
+                          user['blood_group'],
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        const Icon(
+                          Icons.email,
+                          color: Colors.purple,
+                        ),
+                        Text(
+                          user['email'],
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ],
                     ),

@@ -34,8 +34,8 @@ class _RequestState extends State<Request> {
     } else {
       // Send email to user
       final recipientEmail = userQuerySnapshot.docs.first.get('email');
-      final message =
-          'Hello,\n\nThis email is being sent to you $recipientEmail to request blood donation. You\'re registered to our app as blood donor. Reach the person in need of blood through the sender of this email. If you did not make this request, please ignore this message.\n\nBest regards,\nThe Safe Live Team';
+      const message =
+          'Hello,\n\nThis email is being sent to you to request blood donation. You\'re registered to our app as blood donor. Reach the person in need of blood through the email . If you did not make this request, please ignore this message.\n\nBest regards,\nThe Safe Live Team';
 
       try {
         final email = Email(
@@ -48,11 +48,6 @@ class _RequestState extends State<Request> {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Email request sent.')),
         );
-        // Store the request in Firestore
-        await FirebaseFirestore.instance.collection('blood_requests').add({
-          'requester_email': currentUser.email,
-          'recipient_email': recipientEmail
-        });
       } catch (e) {
         print('Error sending email: $e');
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

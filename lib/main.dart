@@ -1,8 +1,6 @@
 import 'package:bds/donors.dart';
-import 'package:bds/home_screen.dart';
 import 'package:bds/profile.dart';
 import 'package:bds/request.dart';
-import 'package:bds/signup_screen.dart';
 import 'package:bds/wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -39,7 +37,4 @@ class MyApp extends StatelessWidget {
       },
     );
   }
-}
-
-class HomeScreen {
 }
